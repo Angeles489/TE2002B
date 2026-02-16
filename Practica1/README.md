@@ -82,7 +82,6 @@ El sistema debe encender el LED únicamente cuando el valor ingresado en los swi
 
 ## 💡 Funcionamiento en FPGA
 
-
 <p align="center">
   <img src="imagenes/funcionamiento1_fpga.jpeg" width="300"/>
   <img src="imagenes/funcionamiento2_fpga.jpeg" width="300"/>
