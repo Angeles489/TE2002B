@@ -70,5 +70,14 @@ El resultado se mostrará encendiendo un LED cuando el número sea primo.
 
 ## ✅ Resultado Esperado  
 
-El sistema debe encender el LED únicamente cuando el valor ingresado en los switches corresponda a un número primo dentro del rango de 0 a 15.
+El sistema debe encender el LED únicamente cuando el valor ingresado en los switches corresponda a un número primo dentro del rango de 0 a 15
+
+## 📷 Evidencia de Simulación
+
+![Simulación](imagenes/Practica1 Wave.png)(imagenes/Practica1 RTL.png)
+
+## 💡 Funcionamiento en FPGA
+
+![Funcionamiento FPGA](imagenes/funcionamiento1_fpga.jpeg)(imagenes/funcionamiento2_fpga.jpeg)
+
 
