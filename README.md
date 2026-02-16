@@ -98,5 +98,5 @@ Cada práctica debe demostrar el correcto funcionamiento tanto en simulación co
 
 ## 👨‍💻 Autor  
 
-Estudiante de Ingeniería  
+Ángeles Araiza García A00574806
 Registro académico de prácticas en sistemas digitales con FPGA.
