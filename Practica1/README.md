@@ -74,14 +74,16 @@ El sistema debe encender el LED únicamente cuando el valor ingresado en los swi
 
 ## 📷 Evidencia de Simulación
 
-![Simulación](imagenes/Practica1_Wave.png)[](imagenes/Practica1_RTL.png)
+![Simulación]
+<p align="center">
+  <img src="imagenes/Practica1_Wave.png" width="300"/>
+  <img src="imagenes/Practica1_RTL.png" width="300"/>
+</p>
 
 ## 💡 Funcionamiento en FPGA
 
 ![Funcionamiento FPGA](imagenes/funcionamiento1_fpga.jpeg)[](imagenes/funcionamiento2_fpga.jpeg)
 <p align="center">
-  <img src="imagenes/Practica1_Wave.png" width="300"/>
-  <img src="imagenes/Practica1_RTL.png" width="300"/>
   <img src="imagenes/funcionamiento1_fpga.jpeg" width="300"/>
   <img src="imagenes/funcionamiento2_fpga.jpeg" width="300"/>
 </p>
