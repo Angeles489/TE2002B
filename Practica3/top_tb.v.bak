@@ -1,0 +1,30 @@
+module top_tb();
+	reg CLK;
+	reg rst;
+	reg up_down;
+	reg load;
+	reg [6:0] data_in;
+	wire [6:0] HEX0;
+	wire [6:0] HEX1;
+	wire [6:0] HEX2;
+	
+top DUT(
+	.CLK(CLK),
+	.rst(rst),
+	.up_down(up_down),
+	.load(load),
+	.data(in),
+	.HEX0(HEX0),
+	.HEX1(HEX1),
+	.HEX2(HEX2)
+);
+
+
+initial
+	begin
+		CLK=0;
+		forever #5
+		CLK= ~CLK;
+end
+
+
