@@ -1,6 +1,0 @@
-module Contador100_tb();
-	reg CLK;
-	reg rst;
-	wire [6:0] count;
-	
-
