@@ -185,7 +185,7 @@ Durante la simulación se verificó:
 ## Funcionamiento en FPGA
 
 ![Contador FPGA]
-Vídeo en carpeta
+Vídeo en carpeta: https://drive.google.com/file/d/1WVCjNUD0HY2v4BXHk-Xw1OGxAWKlS_oo/view?usp=sharing 
 
 ---
 
