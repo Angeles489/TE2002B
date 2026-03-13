@@ -175,11 +175,17 @@ Durante la simulación se verificó:
 
 ## Simulación
 
-![Simulación contador](imagenes/simulacion_contador.png)
+![Simulación contador](imagenes/P3.png)
+![Simulación contador](imagenes/P3_waves.png)
+
+<p align="center">
+  <img src="imagenes/P3_RTL.png" width="400"/>
+</p>
 
 ## Funcionamiento en FPGA
 
-![Contador FPGA](imagenes/fpga_contador.jpg)
+![Contador FPGA]
+Vídeo en carpeta
 
 ---
 
@@ -196,4 +202,4 @@ Se implementó correctamente un **contador bidireccional con carga de datos**, d
 
 # 👨‍💻 Autor
 
-Práctica académica de **Diseño Digital con FPGA utilizando Verilog HDL**.
+Ángeles Araiza García A00574806
