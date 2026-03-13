@@ -189,7 +189,7 @@ El sistema muestra la palabra **BAD** indicando que la contraseña es incorrecta
 ## Funcionamiento en FPGA
 
 ![Funcionamiento](imagenes/P4_FPGA.jpeg)
-![Funcionamiento](imagenes/P4_FPGA.jpeg)
+![Funcionamiento](imagenes/P4_FPGA2.jpeg)
 ---
 
 # ✅ Resultado
