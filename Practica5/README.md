@@ -176,11 +176,13 @@ BCD_4displays
 
 ## Simulación
 
-![Simulación PWM](imagenes/simulacion_pwm.png)
+![Simulación PWM](imagenes/P5.png)
+![Simulación PWM](imagenes/P5_RTL.png)
+![Simulación PWM](imagenes/P5_Waves.png)
 
 ## Funcionamiento en FPGA
 
-![PWM FPGA](imagenes/fpga_pwm.jpg)
+![PWM FPGA](imagenes/P5 FPGA.jpeg)
 
 ---
 
