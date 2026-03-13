@@ -199,4 +199,5 @@ Este sistema puede utilizarse como base para **control de servomotores, iluminac
 
 # 👨‍💻 Autor
 
-Práctica académica de **Diseño Digital con FPGA utilizando Verilog HDL**.
+Ángeles Araiza García A00574806
+
