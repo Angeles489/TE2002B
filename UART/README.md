@@ -215,6 +215,7 @@ Durante la simulación se verificó:
 ## Funcionamiento del sistema
 
 ![UART FPGA](imagenes/UART_FPGA.jpeg)
+
 Vídeo: https://drive.google.com/file/d/1236UuAP8VD0LsCsEr4rU3ufhOTayym1g/view?usp=sharing
 
 ---
