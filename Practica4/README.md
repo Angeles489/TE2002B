@@ -180,12 +180,16 @@ El sistema muestra la palabra **BAD** indicando que la contraseña es incorrecta
 
 ## Simulación
 
-![Simulación](imagenes/simulacion_password.png)
+![Simulación](imagenes/P4.png)
+![Simulación](imagenes/P4_RTL.png)
+![Simulación](imagenes/P4_Waves.png)
+
+
 
 ## Funcionamiento en FPGA
 
-![Funcionamiento](imagenes/fpga_password.jpg)
-
+![Funcionamiento](imagenes/P4_FPGA.jpeg)
+![Funcionamiento](imagenes/P4_FPGA.jpeg)
 ---
 
 # ✅ Resultado
@@ -200,5 +204,4 @@ Se implementó correctamente un sistema de **verificación de contraseña median
 ---
 
 # 👨‍💻 Autor
-
-Práctica académica de **Diseño Digital con FPGA utilizando Verilog HDL**.
+Ángeles Araiza García A00574806
