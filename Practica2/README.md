@@ -161,6 +161,10 @@ Se realizaron simulaciones para verificar:
 ![Simulación BCD](imagenes/P2.png)
 ![Simulación BCD](imagenes/P2_waves.png)
 
+<p align="center">
+  <img src="imagenes/P2_RTL.png" width="400"/>
+</p>
+
 ## Funcionamiento en FPGA
 
 ![Displays FPGA](imagenes/fpga_displays.jpg)
