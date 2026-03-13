@@ -2,157 +2,172 @@
 
 ## 📌 Descripción
 
-En esta práctica se implementa un **contador configurable hasta 100** utilizando **Verilog HDL** en una FPGA.  
-El sistema permite contar de forma **ascendente o descendente**, así como **cargar un valor inicial manualmente** mediante una entrada de datos.
+En esta práctica se implementa un **contador digital configurable hasta 100** utilizando **Verilog HDL** en una FPGA.  
+El sistema permite realizar conteo **ascendente o descendente**, además de permitir **cargar un valor inicial manualmente** mediante una entrada externa.
 
-El valor del contador se muestra en **tres displays de 7 segmentos** de la FPGA.
+El contador reinicia automáticamente cuando alcanza su valor límite o cuando llega a cero, dependiendo de la dirección del conteo.
 
 ---
 
-## 🎯 Objetivo
+# 🎯 Objetivo
 
-Diseñar e implementar un contador digital que:
+Diseñar un módulo en Verilog que:
 
-- Cuente de **0 a 100**
-- Permita conteo **ascendente o descendente**
+- Implemente un **contador de 0 a 100**
+- Permita **conteo ascendente y descendente**
 - Permita **cargar un valor inicial**
-- Muestre el valor actual en **displays de 7 segmentos**
+- Utilice **reset asíncrono**
+- Sea configurable mediante parámetros
 
 ---
 
-## 🛠 Materiales y Herramientas
+# 🛠 Materiales y Herramientas
 
 - Tarjeta FPGA **DE10-Lite**
 - Software **Intel Quartus Prime Lite**
 - Lenguaje **Verilog HDL**
-- Cable USB Blaster
+- Cable **USB Blaster**
 
 ---
 
 # ⚙️ Funcionamiento del Sistema
 
-El sistema recibe diferentes señales de control para manipular el contador.
+El sistema funciona a partir de una señal de reloj (`CLK`) que actualiza el valor del contador.
 
-### Entradas
+Dependiendo de las señales de control, el contador puede:
+
+- Reiniciarse
+- Cargar un valor externo
+- Contar hacia arriba
+- Contar hacia abajo
+
+---
+
+# 🎛 Entradas y Salidas
+
+## Entradas
 
 | Señal | Descripción |
 |------|-------------|
-| `CLK` | Señal de reloj de la FPGA |
-| `rst` | Reinicia el contador a 0 |
-| `up_down` | Define dirección del conteo (1 = ascendente, 0 = descendente) |
-| `load` | Permite cargar un valor manual |
-| `data_in[6:0]` | Valor inicial que se carga en el contador |
+| `CLK` | Señal de reloj |
+| `rst` | Reset asíncrono del contador |
+| `up_down` | Dirección del conteo (1 = ascendente, 0 = descendente) |
+| `data_in[6:0]` | Valor a cargar en el contador |
+| `load` | Activa la carga del valor de entrada |
 
-### Salidas
+---
+
+## Salidas
 
 | Señal | Descripción |
 |------|-------------|
-| `HEX0` | Display de unidades |
-| `HEX1` | Display de decenas |
-| `HEX2` | Display de centenas |
+| `count[6:0]` | Valor actual del contador |
 
 ---
 
-# 🧠 Arquitectura del Diseño
+# 🧠 Módulo Principal
 
-El sistema está compuesto por varios módulos:
-
-```
-📂 Practica_3_Contador100
- ├── Contador100.v
- ├── top.v
- ├── CLK_divider.v
- ├── BCD_module.v
- ├── BCD_4displays.v
- ├── testbench.v
- ├── imagenes/
- └── README.md
-```
-
----
-
-# 🔧 Módulo Principal: Contador100
-
-Este módulo implementa la lógica del contador.
-
-### Características
-
-- Conteo **ascendente y descendente**
-- Límite máximo configurable (`CMAX`)
-- Posibilidad de **cargar un valor inicial**
-- Reset asíncrono
-
-### Parámetro
+El módulo principal es:
 
 ```
-CMAX = 100
-```
-
-### Funcionamiento
-
-1. Si `rst` se activa → el contador se reinicia a **0**.
-2. Si `load` se activa → se carga el valor de `data_in`.
-3. Si `up_down = 1` → conteo **ascendente**.
-4. Si `up_down = 0` → conteo **descendente**.
-
-Cuando el contador alcanza:
-
-- **100** → vuelve a **0** (modo ascendente)
-- **0** → vuelve a **100** (modo descendente)
-
----
-
-# 🔧 Módulo Top
-
-El módulo `top` integra todos los componentes del sistema.
-
-### Componentes conectados
-
-- `Contador100` → lógica del contador
-- `CLK_divider` → divide la frecuencia del reloj
-- `BCD_module` → conversión a BCD
-- `BCD_4displays` → control de displays
-
-### Flujo del sistema
-
-```
-CLK
- │
- ▼
-CLK Divider
- │
- ▼
 Contador100
- │
- ▼
-Conversión BCD
- │
- ▼
-Displays 7 segmentos
+```
+
+Este módulo implementa toda la lógica del contador.
+
+### Parámetro configurable
+
+```verilog
+parameter CMAX = 100
+```
+
+Define el valor máximo del contador.
+
+---
+
+# 🔄 Lógica de Funcionamiento
+
+El comportamiento del contador sigue la siguiente prioridad:
+
+### 1️⃣ Reset
+
+Si `rst` está activo:
+
+```
+count = 0
 ```
 
 ---
 
-# 📟 Visualización en Displays
+### 2️⃣ Carga de valor
 
-El valor del contador se convierte a **BCD** y se muestra en:
+Si `load` está activo:
 
-| Display | Valor |
-|-------|------|
-| HEX0 | Unidades |
-| HEX1 | Decenas |
-| HEX2 | Centenas |
+```
+count = data_in
+```
+
+Esto permite inicializar el contador en un valor específico.
+
+---
+
+### 3️⃣ Conteo Ascendente
+
+Si `up_down = 1`:
+
+```
+count = count + 1
+```
+
+Cuando el contador llega a `CMAX`:
+
+```
+count → 0
+```
+
+---
+
+### 4️⃣ Conteo Descendente
+
+Si `up_down = 0`:
+
+```
+count = count - 1
+```
+
+Cuando el contador llega a `0`:
+
+```
+count → CMAX
+```
+
+---
+
+# 🔁 Flujo del Sistema
+
+```
+        CLK
+         │
+         ▼
+     Contador100
+         │
+         ▼
+        count
+```
+
+El valor de `count` representa el estado actual del contador.
 
 ---
 
 # 🧪 Simulación
 
-Se realizó una simulación para verificar:
+Durante la simulación se verificó:
 
-- Funcionamiento del conteo ascendente
-- Funcionamiento del conteo descendente
-- Carga de valores con `load`
-- Reset del sistema
+- Reset correcto del contador
+- Conteo ascendente hasta 100
+- Reinicio automático al superar el límite
+- Conteo descendente hasta 0
+- Carga de valores mediante `data_in`
 
 ---
 
@@ -160,20 +175,25 @@ Se realizó una simulación para verificar:
 
 ## Simulación
 
-![Simulación](imagenes/simulacion_contador.png)
+![Simulación contador](imagenes/simulacion_contador.png)
 
 ## Funcionamiento en FPGA
 
-![Funcionamiento](imagenes/fpga_contador.jpg)
+![Contador FPGA](imagenes/fpga_contador.jpg)
 
 ---
 
 # ✅ Resultado
 
-El sistema implementado permite controlar un contador de **0 a 100**, configurable y visualizable en los **displays de la FPGA**, demostrando el correcto uso de módulos jerárquicos en **Verilog**.
+Se implementó correctamente un **contador bidireccional con carga de datos**, demostrando:
+
+- uso de **lógica secuencial**
+- manejo de **reset asíncrono**
+- control de flujo mediante señales externas
+- diseño modular en **Verilog**
 
 ---
 
 # 👨‍💻 Autor
 
-Práctica académica de diseño digital utilizando FPGA y Verilog HDL.
+Práctica académica de **Diseño Digital con FPGA utilizando Verilog HDL**.
