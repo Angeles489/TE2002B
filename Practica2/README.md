@@ -158,7 +158,8 @@ Se realizaron simulaciones para verificar:
 
 ## Simulación
 
-![Simulación BCD](imagenes/simulacion_bcd.png)
+![Simulación BCD](imagenes/P2.png)
+![Simulación BCD](imagenes/P2_waves.png)
 
 ## Funcionamiento en FPGA
 
