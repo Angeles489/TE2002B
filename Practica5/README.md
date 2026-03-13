@@ -182,7 +182,7 @@ BCD_4displays
 
 ## Funcionamiento en FPGA
 
-![PWM FPGA](imagenes/P5 FPGA.jpeg)
+![PWM FPGA](imagenes/P5_FPGA.jpeg)
 
 ---
 
