@@ -183,4 +183,4 @@ El sistema genera un **tablero de ajedrez** utilizando operaciones lógicas sobr
 
 # 👨‍💻 Autor
 
-Práctica académica de **Diseño Digital con FPGA utilizando Verilog HDL**.
+Ángeles Araiza García A00574806
