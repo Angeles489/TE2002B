@@ -1,4 +1,5 @@
-# 🧠 FPGA Digital Design Labs – DE10-Lite
+## 🧠 Diseño con lógica programable. 
+# Compendio de prácticas en FPGA
 
 Repositorio que contiene una colección de **prácticas de diseño digital utilizando Verilog HDL** implementadas en la **FPGA DE10-Lite (Intel MAX10)**.
 
