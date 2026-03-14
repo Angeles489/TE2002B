@@ -167,7 +167,7 @@ Se realizaron simulaciones para verificar:
 
 ## Funcionamiento en FPGA
 
-![Displays FPGA](imagenes/fpga_displays.jpg)
+![Displays FPGA](imagenes/P2_FPGA.jpeg)
 
 ---
 
