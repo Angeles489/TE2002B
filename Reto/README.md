@@ -217,9 +217,9 @@ El proyecto integra múltiples conceptos de diseño digital y sistemas embebidos
 
 # 👨‍💻 Autores
 
--Ángeles Araiza
--Vannesa Salazar
--Ana Chavez
+- Ángeles Araiza
+- Vannesa Salazar
+- Ana Chavez
 
 Proyecto final de **Diseño Digital con FPGA – Verilog HDL**
 
