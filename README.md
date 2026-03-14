@@ -1,143 +1,132 @@
-# 🧠 Prácticas de Diseño Digital con FPGA (Verilog)
+# 🧠 FPGA Digital Design Labs – DE10-Lite
 
-Repositorio que contiene una colección de **prácticas de diseño digital implementadas en FPGA** utilizando **Verilog HDL**.  
-Cada práctica aborda diferentes conceptos fundamentales como lógica combinacional, contadores, máquinas de estados y generación de señales PWM.
+Repositorio que contiene una colección de **prácticas de diseño digital utilizando Verilog HDL** implementadas en la **FPGA DE10-Lite (Intel MAX10)**.
 
-Las prácticas fueron desarrolladas para ejecutarse en una **FPGA DE10-Lite**, utilizando el software **Intel Quartus Prime Lite**.
+Las prácticas cubren conceptos fundamentales del diseño digital y sistemas embebidos, incluyendo:
 
----
+- lógica combinacional
+- máquinas de estados (FSM)
+- contadores
+- generación de PWM
+- comunicación serial
+- generación de video VGA
+- lectura de sensores
 
-# 🎯 Objetivo del Repositorio
-
-Documentar y demostrar la implementación de distintos sistemas digitales en FPGA, aplicando conceptos como:
-
-- Diseño modular en Verilog
-- Lógica combinacional
-- Lógica secuencial
-- Contadores
-- Máquinas de estados finitas (FSM)
-- Conversión BCD
-- Control de displays de 7 segmentos
-- Generación de señales PWM
+El objetivo es desarrollar sistemas completos desde **diseño en Verilog hasta implementación en hardware real**.
 
 ---
 
-# 🛠 Herramientas Utilizadas
+# 🛠 Hardware y Software Utilizado
 
-- FPGA **DE10-Lite**
-- **Intel Quartus Prime Lite**
-- **Verilog HDL**
-- **ModelSim** para simulación
+## Hardware
+- FPGA **DE10-Lite (Intel MAX10)**
+- Monitor **VGA**
+- Sensor **acelerómetro ADXL345**
 - Cable **USB Blaster**
 
+## Software
+- **Intel Quartus Prime Lite**
+- **ModelSim (simulación)**
+- **Verilog HDL**
+
 ---
 
-# 📚 Lista de Prácticas
+# 📚 Prácticas Incluidas
 
-| Práctica | Tema | Descripción |
-|--------|------|-------------|
-| **Práctica 1** | Número Primo | Sistema que determina si un número binario ingresado mediante switches es primo. |
-| **Práctica 2** | Conversión BCD | Conversión de un número binario a unidades, decenas, centenas y millares para mostrarlos en displays de 7 segmentos. |
-| **Práctica 3** | Contador a 100 | Contador ascendente y descendente con capacidad de carga de datos. |
-| **Práctica 4** | Verificación de Contraseña | Máquina de estados que valida una contraseña de 16 bits ingresada en 4 pasos. |
-| **Práctica 5** | Generador PWM | Generación de una señal PWM controlada mediante switches. |
+| # | Práctica | Descripción |
+|---|---|---|
+| 1 | Número Primo | Determina si un número ingresado en switches es primo y enciende un LED |
+| 2 | Conversor BCD a 7 segmentos | Conversión de números a displays de 7 segmentos |
+| 3 | Contador a 100 | Contador ascendente y descendente con carga de valor |
+| 4 | Sistema de Contraseña | Sistema de acceso con verificación de contraseña usando switches |
+| 5 | Control PWM | Generación de señal PWM controlada por switches |
+| 6 | UART | Comunicación serial entre transmisor y receptor |
+| 7 | VGA | Generación de señal VGA mostrando un tablero de ajedrez |
+| 8 | Acelerómetro | Lectura del sensor ADXL345 mediante SPI |
 
 ---
 
 # 📂 Estructura del Repositorio
 
 ```
-FPGA-Practicas
+FPGA_Labs/
 │
-├── Practica1_NumeroPrimo
-│   ├── modulos.v
-│   ├── testbench.v
-│   ├── imagenes
-│   └── README.md
+├── Practica_1_Numero_Primo
 │
-├── Practica2_BCD_Displays
-│   ├── BCD_4displays.v
-│   ├── BCD_module.v
-│   ├── testbench.v
-│   ├── imagenes
-│   └── README.md
+├── Practica_2_BCD_Display
 │
-├── Practica3_Contador100
-│   ├── Contador100.v
-│   ├── modulos_extra.v
-│   ├── testbench.v
-│   ├── imagenes
-│   └── README.md
+├── Practica_3_Contador_100
 │
-├── Practica4_PasswordFSM
-│   ├── practica4.v
-│   ├── BCD_module.v
-│   ├── testbench.v
-│   ├── imagenes
-│   └── README.md
+├── Practica_4_Contrasena
 │
-├── Practica5_PWM
-│   ├── pwm.v
-│   ├── contador.v
-│   ├── clock_divider.v
-│   ├── BCD_4displays.v
-│   ├── imagenes
-│   └── README.md
+├── Practica_5_PWM
+│
+├── Practica_6_UART
+│
+├── Practica_7_VGA
+│
+├── Practica_8_Acelerometro
 │
 └── README.md
 ```
 
----
-
-# 🧠 Conceptos Aplicados
-
-A lo largo de estas prácticas se aplican conceptos importantes del diseño digital:
-
-- Diseño jerárquico de módulos
-- Uso de parámetros en Verilog
-- Manejo de señales de reloj
-- Contadores síncronos
-- Máquinas de estados finitas (FSM)
-- Generación de señales PWM
-- Conversión de datos para visualización en displays
-
----
-
-# 📟 Hardware Utilizado
-
-Las prácticas están diseñadas para la FPGA:
-
-**DE10-Lite**
-
-Elementos utilizados de la tarjeta:
-
-- Switches (`SW`)
-- Botones (`KEY`)
-- Displays de 7 segmentos (`HEX`)
-- LEDs
-
----
-
-# 📷 Evidencias
-
 Cada práctica incluye:
 
-- Capturas de **simulación**
-- Imágenes del **funcionamiento en FPGA**
-- Archivos **.v** de los módulos
-- Testbench para verificación
+- código en **Verilog**
+- módulos utilizados
+- explicación del funcionamiento
+- imágenes o evidencia del funcionamiento
 
 ---
 
-# 🚀 Posibles Mejoras Futuras
+# 🧠 Conceptos de Diseño Cubiertos
 
-- Implementación de interfaces UART
-- Comunicación con sensores externos
-- Control de servomotores con PWM
-- Sistemas digitales más complejos
+Las prácticas implementan múltiples conceptos del diseño digital.
+
+## 🔹 Lógica combinacional
+- verificación de números primos
+- conversión BCD
+
+## 🔹 Lógica secuencial
+- contadores
+- registros
+
+## 🔹 Máquinas de estados (FSM)
+- sistema de contraseña
+- control UART
+
+## 🔹 Generación de señales
+- PWM
+- divisores de reloj
+
+## 🔹 Protocolos de comunicación
+- **UART**
+- **SPI**
+
+## 🔹 Video digital
+- generación de sincronización **VGA**
+- control de píxeles
+
+## 🔹 Integración con sensores
+- lectura de acelerómetro
+
+---
+
+# 🎯 Objetivo Académico
+
+Este repositorio fue desarrollado como parte de prácticas de **Diseño Digital con FPGA**, con el objetivo de:
+
+- comprender la arquitectura de sistemas digitales
+- implementar módulos en **Verilog HDL**
+- integrar múltiples componentes en hardware real
+- trabajar con **interfaces de comunicación y sensores**
 
 ---
 
 # 👨‍💻 Autor
 
 Ángeles Araiza García A00574806
+
+Proyecto académico de **Diseño Digital con FPGA utilizando Verilog HDL**.
+
+Implementado en **Intel DE10-Lite FPGA**.
