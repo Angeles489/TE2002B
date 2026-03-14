@@ -191,7 +191,7 @@ Reto_Brazo_Robotico/
 
 ## Brazo robótico controlado por FPGA
 
-![Brazo Robotico](imagenes/brazo_robotico.jpg)
+![Brazo Robotico](imagenes/brazo_robotico.png)
 
 ---
 
